@@ -11,11 +11,14 @@ class MessageCreate: Extension() {
 	override suspend fun setup() {
 		event<MessageCreateEvent> {
 			action {
-				if (event.message.content.lowercase() == "vyrek" || event.message.content.lowercase() == "marcock") {
-					event.message.respond("cutie :3")
-				} else if (event.message.content.contains("507367752391196682") ||
+				if (event.message.content.lowercase() == "vyrek" ||
 					event.message.content.contains("538421122920742942")) {
-					event.message.respond("cutie :3")
+					event.message.respond("gay :3")
+				} else if (event.message.content.lowercase() == "marcock" ||
+					event.message.content.contains("507367752391196682")) {
+					event.message.respond("cock :3")
+				} else if (event.message.content.lowercase() == "marcrock") {
+					event.message.respond("marcock* :3")
 				}
 			}
 		}

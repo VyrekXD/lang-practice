@@ -25,6 +25,7 @@ suspend fun main() {
 			add(::Slap)
 			add(::Ping)
 			add(::Dice)
+			add(::RPS)
 
 			// Events
 			add(::MessageCreate)

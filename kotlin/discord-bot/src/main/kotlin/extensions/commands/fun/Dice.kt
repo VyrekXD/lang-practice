@@ -26,7 +26,7 @@ val DiceUrls: Map<Number, String> = mapOf(
 	20 to "https://www.google.com/logos/fnbx/polyhedral_dice/d20_blank.png"
 )
 
-class Dice: Extension() {
+class Dice : Extension() {
 	override val name = "dice"
 
 	override suspend fun setup() {
@@ -40,9 +40,16 @@ class Dice: Extension() {
 				val results: MutableList<String> = mutableListOf()
 
 				if (quantity > 1) {
+					var total = 0
+
 					for (i in 0 until quantity) {
-						results.add("Dice `${i + 1}` result is **${(1..type).random()}**")
+						val num = (1..type).random()
+						total += num
+
+						results.add("Dice `${i + 1}` result is **$num**")
 					}
+
+					results.add("\nTotal is **$total**")
 				} else {
 					results.add("Your number is **${(1..type).random()}**")
 				}
@@ -72,7 +79,7 @@ class Dice: Extension() {
 		}
 	}
 
-	inner class DiceArguments: Arguments() {
+	inner class DiceArguments : Arguments() {
 		private val diceChoices: MutableMap<String, Long> = mutableMapOf(
 			"4" to 4,
 			"6 (Default)" to 6,

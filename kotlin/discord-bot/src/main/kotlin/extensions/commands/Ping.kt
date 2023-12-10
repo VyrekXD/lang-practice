@@ -13,7 +13,7 @@ class Ping: Extension() {
 
 			action {
 				respond {
-					content = "Pong! `${bot.kordRef.gateway.averagePing}`ms"
+					content = "Pong! `tuputamadre`ms"
 				}
 			}
 		}
